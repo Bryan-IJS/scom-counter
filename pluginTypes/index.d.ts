@@ -165,16 +165,12 @@ declare module "@scom/scom-counter/formSchema.ts" {
         };
         uiSchema: {
             type: string;
-            elements: {
+            elements: ({
                 type: string;
                 label: string;
                 elements: {
                     type: string;
-                    elements: ({
-                        type: string;
-                        scope: string;
-                        elements?: undefined;
-                    } | {
+                    elements: {
                         type: string;
                         elements: ({
                             type: string;
@@ -193,10 +189,19 @@ declare module "@scom/scom-counter/formSchema.ts" {
                                 };
                             };
                         })[];
-                        scope?: undefined;
-                    })[];
+                    }[];
                 }[];
-            }[];
+            } | {
+                type: string;
+                label: string;
+                elements: {
+                    type: string;
+                    elements: {
+                        type: string;
+                        scope: string;
+                    }[];
+                }[];
+            })[];
         };
         advanced: {
             dataSchema: {
@@ -277,16 +282,12 @@ declare module "@scom/scom-counter/formSchema.ts" {
         };
         uiSchema: {
             type: string;
-            elements: {
+            elements: ({
                 type: string;
                 label: string;
                 elements: {
                     type: string;
-                    elements: ({
-                        type: string;
-                        scope: string;
-                        elements?: undefined;
-                    } | {
+                    elements: {
                         type: string;
                         elements: ({
                             type: string;
@@ -305,10 +306,19 @@ declare module "@scom/scom-counter/formSchema.ts" {
                                 };
                             };
                         })[];
-                        scope?: undefined;
-                    })[];
+                    }[];
                 }[];
-            }[];
+            } | {
+                type: string;
+                label: string;
+                elements: {
+                    type: string;
+                    elements: {
+                        type: string;
+                        scope: string;
+                    }[];
+                }[];
+            })[];
         };
     };
 }
